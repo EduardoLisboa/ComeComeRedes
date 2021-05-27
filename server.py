@@ -27,7 +27,7 @@ def threaded_client(conn):
     reply = ''
     while True:
         try:
-            data = conn.recv(2048)
+            data = conn.recv(4096)
             reply = data.decode('utf-8')
             if not data:
                 conn.send(str.encode("Goodbye"))
@@ -39,19 +39,22 @@ def threaded_client(conn):
                 
                 playerInfo = playerPosReply.split(':')
                 id = int(playerInfo[0])
-                pos[id] = playerInfo
+                pos[id] = playerPosReply
+
+                print(f'Player pos: {playerPosReply} | Cube pos: {cubePosReply}')
 
                 cubePos = cubePosReply
 
                 if id == 0: nid = 1
                 if id == 1: nid = 0
 
-                reply = pos[nid][:] + '/' + cubePos
+                reply = str(pos[nid][:]) + '/' + cubePos
                 # reply = pos[nid][:]
                 print("Sending: " + reply)
 
             conn.sendall(str.encode(reply))
-        except:
+        except Exception as err:
+            print('Error on server side!', err)
             break
 
     print("Connection Closed")

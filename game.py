@@ -149,14 +149,19 @@ class Game:
 
     @staticmethod
     def parse_data(data):
+        if data:
+            print('Data: ', data)
+        else:
+            print('No data')
         try:
             playerData = data.split('/')[0]
             playerPos = playerData.split(":")[1].split(",")
             cubeData = data.split('/')[1]
             cubePos = cubeData.split(':')[1].split(',')
-            print(playerData, cubeData)
+            print(int(playerPos[0]), int(playerPos[1]), int(cubePos[0]), int(cubePos[1]))
             return [int(playerPos[0]), int(playerPos[1]), int(cubePos[0]), int(cubePos[1])]
-        except:
+        except Exception as err:
+            print('Error on client side!', err)
             return 0, 0, 0, 0
 
 
