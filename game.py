@@ -69,7 +69,7 @@ class Game:
         self.player = Player(50, 50)
         self.player2 = Player(100, 100, BLUE)
         self.canvas = Canvas(self.width, self.height, "Come Come")
-        self.cube = Cube(randint(1, self.width - 21), (randint(1, self.height - 21)))
+        self.cube = Cube(600, 600)
 
     def run(self):
         clock = pygame.time.Clock()
@@ -121,7 +121,12 @@ class Game:
                     cubeExist = False
 
             # Send Network Stuff
-            self.player2.x, self.player2.y, self.cube.x, self.cube.y = self.parse_data(self.send_data())
+            newPos = self.parse_data(self.send_data())
+            self.player2.x = newPos[0]
+            self.player2.y = newPos[1]
+            self.cube.x = newPos[2]
+            self.cube.y = newPos[3]
+            # self.player2.x, self.player2.y, self.cube.x, self.cube.y = self.parse_data(self.send_data())
                 
             # Update Canvas
             self.canvas.draw_background()
@@ -149,7 +154,8 @@ class Game:
             playerPos = playerData.split(":")[1].split(",")
             cubeData = data.split('/')[1]
             cubePos = cubeData.split(':')[1].split(',')
-            return int(playerPos[0]), int(playerPos[1]), int(cubePos[0]), int(cubePos[1])
+            print(playerData, cubeData)
+            return [int(playerPos[0]), int(playerPos[1]), int(cubePos[0]), int(cubePos[1])]
         except:
             return 0, 0, 0, 0
 
