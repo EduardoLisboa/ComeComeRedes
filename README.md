@@ -4,7 +4,7 @@ Este repositório foi criado para hospedar o jogo ComeCome, projeto final da dis
 
 ## Instruções para execução
 
-Para executar o jogo, é recomendado que se tenha a biblioteca Pygames instalada em seu computador. Caso você utilize alguma distribuição Linux, a instalação pode ser feita através do seguinte comando:
+Para executar o jogo, é recomendado que se tenha a biblioteca Pygame instalada em seu computador. Caso você utilize alguma distribuição Linux, a instalação pode ser feita através do seguinte comando:
 
 ```python3 -m pip install -U pygame --user```
 
