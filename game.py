@@ -173,7 +173,7 @@ class Game:
     
 
     def check_winner(self):
-        if self.player.colected == 5:
+        if self.player.colected == 20:
             winner = self.parse_data(self.send_data(False, True))
             if winner:
                 print('You win!')
