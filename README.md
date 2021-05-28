@@ -16,7 +16,7 @@ Após a instalação da biblioteca, é preciso que se execute o arquivo server.p
 
 Em seguida, que seja executado o arquivo game.py em dois terminais diferentes, através do comando:
 
-```python3 server.py```
+```python3 game.py```
 
 Depois das execuções, o jogo abrirá duas telas para ser executado em paralelo e jogado por dois jogadores.
 
