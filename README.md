@@ -20,3 +20,4 @@ Em seguida, que seja executado o arquivo game.py em dois terminais diferentes, a
 
 Depois das execuções, o jogo abrirá duas telas para ser executado em paralelo e jogado por dois jogadores.
 
+Caso o código não funcione depois dos comandos, é recomendável que se altere o "host" nos arquivos "server" e "network" para o endereço IPv4 da máquina em que o servidor está sendo rodado.
