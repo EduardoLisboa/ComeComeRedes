@@ -1,6 +1,6 @@
 # ComeComeRedes
 
-Este repositório foi criado para hospedar o jogo ComeCome, projeto final da disciplina de Redes de Computadores. O jogo foi desenvolvido na linguagem Python e utiliza a biblioteca Pygames.
+Este repositório foi criado para hospedar o jogo ComeCome, projeto final da disciplina de Redes de Computadores. O jogo foi desenvolvido na linguagem Python e utiliza a biblioteca Pygame.
 
 ## Instruções para execução
 
